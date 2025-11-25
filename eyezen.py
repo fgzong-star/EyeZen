@@ -17,7 +17,7 @@ from PyQt6.QtGui import QColor, QFont, QPainter, QPen, QAction, QIcon, QPixmap, 
 CONFIG_FILE = "eyezen_config.json"
 APP_NAME = "EyeZen"
 # 更新实例锁 Key
-SINGLE_INSTANCE_KEY = "EyeZen-V3.4-AsynchronousSplashScreen"
+SINGLE_INSTANCE_KEY = "EyeZen-V1.0.0-AsynchronousSplashScreen"
 
 # --- 默认配置 ---
 DEFAULT_CONFIG = {
@@ -79,7 +79,7 @@ QScrollBar:vertical { border: none; background: #f0f3f8; width: 10px; margin: 0p
 QScrollBar::handle:vertical { background: #c0c5ce; min-height: 20px; border-radius: 5px; }
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { border: none; background: none; }
 
-/* V3.4 新增: 启动画面样式 */
+/* V1.0.0 新增: 启动画面样式 */
 #SplashFrame {
     background-color: #ffffff;
     border-radius: 20px;
@@ -472,7 +472,7 @@ class SettingsDialog(QDialog):
 
         about_tab = QWidget(); ab_layout = QVBoxLayout(about_tab); ab_layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
         logo_lbl = QLabel(); logo_lbl.setPixmap(create_eyezen_icon().pixmap(96, 96)); ab_layout.addWidget(logo_lbl, alignment=Qt.AlignmentFlag.AlignCenter)
-        title_lbl = QLabel("EyeZen v3.4 (Async Splash)"); title_lbl.setStyleSheet("font-size: 28px; font-weight: bold; color: #2752cb; margin-top: 15px;"); ab_layout.addWidget(title_lbl, alignment=Qt.AlignmentFlag.AlignCenter)
+        title_lbl = QLabel("EyeZen v1.0.0 (Async Splash)"); title_lbl.setStyleSheet("font-size: 28px; font-weight: bold; color: #2752cb; margin-top: 15px;"); ab_layout.addWidget(title_lbl, alignment=Qt.AlignmentFlag.AlignCenter)
         desc_lbl = QLabel("A minimalist eye-care assistant.\nFeatures asynchronous startup for instant responsiveness.\n\nDeveloped with Python & PyQt6."); desc_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter); desc_lbl.setStyleSheet("font-size: 16px; color: #666; margin-top: 10px;"); ab_layout.addWidget(desc_lbl)
 
         tab_widget.addTab(gen_tab, "General Settings"); tab_widget.addTab(about_tab, "About")
@@ -556,7 +556,7 @@ class DashboardPage(QWidget):
     def update_ui(self): m, s = divmod(self.current_time, 60); pct = (self.current_time / self.total_time * 100) if self.total_time else 0; status = "PAUSED" if self.timer_state == "PAUSED" else ("FOCUS" if self.timer_state == "RUNNING" else "READY"); self.progress.set_progress(pct, f"{m:02d}:{s:02d}", status)
 
 # ==========================================
-# --- V3.4 新增: 启动画面窗口 ---
+# --- V1.0.0 新增: 启动画面窗口 ---
 # ==========================================
 class SplashWidget(QWidget):
     def __init__(self):
@@ -611,7 +611,7 @@ class SplashWidget(QWidget):
         self.move(qr.topLeft())
 
 # ==========================================
-# --- V3.4 新增: 后台启动任务线程 ---
+# --- V1.0.0 新增: 后台启动任务线程 ---
 # ==========================================
 class StartupWorker(QThread):
     initialization_done = pyqtSignal(int) # 发回当前亮度值
@@ -631,7 +631,7 @@ class StartupWorker(QThread):
 
 # --- 主窗口 ---
 class EyeZenWindow(QMainWindow):
-    # V3.4 修改构造函数，接收初始亮度值
+    # V1.0.0 修改构造函数，接收初始亮度值
     def __init__(self, initial_real_bri):
         super().__init__()
         self.shared_memory = QSharedMemory(SINGLE_INSTANCE_KEY)
@@ -642,7 +642,7 @@ class EyeZenWindow(QMainWindow):
         self.exclude_fullscreen = self.config.get("exclude_fullscreen", True); self.excluded_apps = self.config.get("excluded_apps", [])
         self.auto_start_rest_secs = self.config.get("auto_start_rest_secs", 30)
         
-        # V3.4: 使用从启动画面传来的真实初始值
+        # V1.0.0: 使用从启动画面传来的真实初始值
         initial_temp = self.config.get('temperature', 0)
         
         # 初始化硬件线程
@@ -676,10 +676,10 @@ class EyeZenWindow(QMainWindow):
         self.dashboard.time_up_signal.connect(self.trigger_break_prompt)
         self.dashboard.brightness_target_signal.connect(self.update_hardware_bri_target)
 
-        # V3.4: 移除原有的 delayed_init_hardware 调用
+        # V1.0.0: 移除原有的 delayed_init_hardware 调用
         # QTimer.singleShot(0, self.delayed_init_hardware)
 
-    # V3.4: 移除该方法
+    # V1.0.0: 移除该方法
     # def delayed_init_hardware(self): ...
 
     def on_smooth_bri_changed(self, val):
