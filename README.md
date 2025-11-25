@@ -22,8 +22,6 @@
 
 Built with modern **Python** and **PyQt6**, it features a multi-threaded architecture to ensure the UI remains responsive, even when communicating with monitor hardware or performing startup tasks.
 
-> **V3.4 Highlights:** Now features an asynchronous splash screen for instant startup responsiveness and optimized background hardware initialization.
-
 ## ✨ Key Features
 
 * **⏱️ Smart Work/Rest Timer:** Customizable intervals for focused work and short breaks.
