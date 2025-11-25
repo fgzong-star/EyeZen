@@ -53,7 +53,7 @@ The Code is totally written and updated by Gemini 3.0 and Deepseek V3.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/你的用户名/EyeZen.git](https://github.com/你的用户名/EyeZen.git)
+    git clone [https://github.com/fgzong-star/EyeZen.git](https://github.com/fgzong-star/EyeZen.git)
     cd EyeZen
     ```
 
