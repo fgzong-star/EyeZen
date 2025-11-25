@@ -22,6 +22,8 @@
 
 Built with modern **Python** and **PyQt6**, it features a multi-threaded architecture to ensure the UI remains responsive, even when communicating with monitor hardware or performing startup tasks.
 
+The Code is totally written and updated by Gemini 3.0 and Deepseek V3. 
+
 ## ✨ Key Features
 
 * **⏱️ Smart Work/Rest Timer:** Customizable intervals for focused work and short breaks.
