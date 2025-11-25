@@ -10,9 +10,17 @@
   <img src="https://img.shields.io/github/license/你的用户名/EyeZen" alt="License">
 </p>
 
+### Main Panel
+
 <img width="793" height="630" alt="image" src="https://github.com/user-attachments/assets/51f13a2c-50bc-4028-947e-29ed4fb130e7" />
 
+### Setting Panel
+
 <img width="702" height="612" alt="image" src="https://github.com/user-attachments/assets/f7295ae1-db57-4985-a9d0-c9dc85e91a1e" />
+
+### Rest Appearance
+
+<img width="2560" height="1438" alt="3" src="https://github.com/user-attachments/assets/4f49bedd-890f-4ec1-af8d-4c7e225774b1" />
 
 
 
