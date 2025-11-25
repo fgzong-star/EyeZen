@@ -1,0 +1,1 @@
+{"work_mins": 30, "rest_secs": 20, "brightness": 100, "temperature": 0, "startup": true, "sound_enabled": true, "custom_preset": {"b": 80, "t": 15}, "exclude_fullscreen": true, "excluded_apps": ["we8.exe", "wemeetapp.exe"]}

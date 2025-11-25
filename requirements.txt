@@ -1,0 +1,3 @@
+PyQt6
+screen-brightness-control
+wmi; platform_system=="Windows"
