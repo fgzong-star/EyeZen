@@ -26,7 +26,7 @@
 
 ## 📖 Introduction
 
-**EyeZen** is designed to prevent eye strain caused by prolonged computer use. Unlike simple timers, it provides a polished user experience with smooth hardware-level brightness control, a non-intrusive warm overlay for temperature adjustment, and a "forced" (but skippable) full-screen rest mode.
+**EyeZen** is designed to prevent eye strain caused by prolonged computer use. Unlike simple timers, it provides a polished user experience with smooth hardware-level brightness control, together with a non-intrusive warm overlay for temperature adjustment, which did not find in other similar eye protect softwares.
 
 Built with modern **Python** and **PyQt6**, it features a multi-threaded architecture to ensure the UI remains responsive, even when communicating with monitor hardware or performing startup tasks.
 
