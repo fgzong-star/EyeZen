@@ -81,6 +81,8 @@ The Code is totally written and updated by Gemini 3.0 and Deepseek V3.
     python eyezen.py
     ```
 
+you can also find the .exe file in the release section.
+
 *Note: The first run might take a moment to initialize monitor hardware in the background, but the splash screen will appear instantly.*
 
 ## ⚙️ Configuration
